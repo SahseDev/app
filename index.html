@@ -7,12 +7,14 @@
 </head>
 <body>
     <script>
-        // Ici, tu récupères le code de l'URL (par exemple, code=123456)
         const urlParams = new URLSearchParams(window.location.search);
         const code = urlParams.get('code');
-        
-        // Tu peux envoyer ce code à ton serveur pour l'échanger contre un access token Discord
-        console.log('Code de redirection :', code);
+
+        if (code) {
+            console.log('Code d\'autorisation reçu :', code);
+        } else {
+            console.log('Aucun code trouvé.');
+        }
     </script>
     <h1>Redirection réussie !</h1>
     <p>Ton code est affiché dans la console. Si tu vois ce message, tout fonctionne !</p>
